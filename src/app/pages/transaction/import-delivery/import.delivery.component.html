@@ -1,0 +1,378 @@
+<nb-card>
+  <nb-card-header>Import Delivery Request</nb-card-header>
+  <nb-card-body>
+    <div class="form-group row">
+      <label class="col-sm-1 col-form-label ">Date</label>
+      <div class="col-sm-2">
+        <input type="text" class="form-control" disabled="true">
+      </div>
+      <label class="col-sm-1 col-form-label">Ref No</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" disabled="true">
+      </div>
+      <div class="row mt-2 ml-1">
+        <div class="col-sm-auto">
+          <button type=" button " class="btn btn-success ">Save</button>
+        </div>
+        <div class="col-sm-auto">
+          <button type=" button " class="btn btn-success">Save As Draft</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-auto">
+      <nb-tabset>
+        <nb-tab tabTitle="Part/Unit Information">
+          <div class="form-group">
+            <ng2-smart-table [settings]="settings" [source]="source" (editConfirm)="submit($event)" (createConfirm)="addData($event)">
+            </ng2-smart-table>
+          </div>
+
+          <label>
+            <b>Import Mode</b>
+          </label>
+          <div class="form-group validation-checkboxes row">
+            <nb-checkbox status="success" class="col-sm-2">Temporary Import</nb-checkbox>
+            <nb-checkbox status="success" class="col-sm-2">Non-Regular Import</nb-checkbox>
+            <nb-checkbox status="success" class="col-sm-2">Unit Trial/Non-regular</nb-checkbox>
+            <nb-checkbox status="success" class="col-sm-2">Unit Homologation</nb-checkbox>
+          </div>
+          <div class="form-group">
+            <label>
+              <b>Purpose Of Import</b>
+            </label>
+            <textarea rows="3" type="text" class="form-control"></textarea>
+          </div>
+
+        </nb-tab>
+        <nb-tab tabTitle="Document Attachment">
+          <div class="row">
+            <div class="form-group col-sm-4">
+              <label>
+                <b>Skep Purpose</b>
+              </label>
+              <table>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Schedule Activity</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio1">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio1" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                        padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Performa Invoice</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio2">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio2" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Performa Packing List</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio3">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio3" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Spec. Tech</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio4">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio4" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Drawing</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio5">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio5" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">User Agreement</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio6">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio6" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="form-group col-sm-4">
+              <label>
+                <b>C/C Purpose</b>
+              </label>
+              <table>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Original Invoice</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio7">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio7" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Original Packing List</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio8">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio8" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Original B/L</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio9">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio9" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+            <div class="form-group col-sm-4">
+              <label>
+                <b>Re-Import Purpose</b>
+              </label>
+              <table>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Skep Export</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio10">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio10" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="mt-2 mr-3">Inspection report</label>
+                  </td>
+                  <td>
+                    <div class="row demo-radio ">
+
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio11">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">YES</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" name="customRadio11" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">NO</span>
+                      </label>
+                      <div class="col-sm-auto">
+                        <button type=" button " class="btn btn-success mt-2 " style="font-size:0.8em !important;
+                            padding:1px !important;">Attach</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+              </table>
+            </div>
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Shipping Information">
+          <div class="row">
+            <div class="form-group col-sm-4">
+              <div class="row">
+                <label class="mt-2">
+                  <b>Sea Fright</b>
+                </label>
+                <div class="demo-checkboxes col-sm-10">
+                  <nb-checkbox>LCL (Less Than Container Loaded)</nb-checkbox>
+                  <nb-checkbox>FCL (Full Container Loaded)</nb-checkbox>
+                  <nb-checkbox>Breakbulk</nb-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-sm-4">
+              <div class="row">
+                <label class="mt-2">
+                  <b>Air Fright</b>
+                </label>
+                <div class="demo-checkboxes col-sm-5 ">
+                  <nb-checkbox>Regular</nb-checkbox>
+                  <nb-checkbox>Courier</nb-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nb-tab>
+        <nb-tab tabTitle="Payment Information ">
+
+        </nb-tab>
+        <nb-tab tabTitle="Application Information ">
+        </nb-tab>
+
+      </nb-tabset>
+
+
+
+    </div>
+  </nb-card-body>
+</nb-card>
